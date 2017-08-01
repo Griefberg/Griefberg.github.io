@@ -1,9 +1,9 @@
 # main text of home
-name: John Doe
-bio: A Man who travels the world eating noodles
+name: Griefberg
+bio: Data Scientist. Tech-lover. Human Being
 
 # twitter summary info
-description: A blog about technology and stuff related
+description: A blog about data science, analytics and technology
 
 # if it's an external image, update below for true
 # better with square images
@@ -34,31 +34,31 @@ disqus:
   categories: [blog, project] # only show disqus for posts that have these categories
 
 # if you don't have any of social below, comment the line
-facebook: myfacebook
-twitter: mytwitter
+facebook: 100001299712320
+#twitter: mytwitter
 # google: mygoogle
 # instagram: myinstagram
 # pinterest: mypinterest
-# linkedin: mylinkedin
+linkedin: roman-solov-ev-6436418a
 # youtube: myyoutube
 # spotify: myspotify
-github: mygithub
+github: Griefberg
 # lastfm: mylastfm
 # stackoverflow: 7044681/mystackoverflow
 # quora: userquora
-# reddit: username
-medium: medium
+#reddit: griefberg
+#medium: medium
 # vimeo: myvimeo
 # lanyrd: mylanyrd
-email: myemail@gmail.com
+email: rom.solovev@gmail.com
 
 authors:
     johndoe:
-        name: John Doe
-        bio: A Man who travels the world eating noodles
+        name: Griefberg
+        bio: Data Scientist. Tech-lover. Human Being
         external-image: false
         picture: assets/images/profile.jpg
-        twitter: johndoe
+        twitter: griefberg
     jamesfoster:
         name: James Foster
         bio: A Man who develops software with coffee
@@ -76,7 +76,7 @@ width: normal
 # paginate_path: "blog/:num/"
 
 # if you don't need projects, comment the *projects* configs below
-projects: true
+projects: false
 
 # if you don't need "about" or "blog", comment them out below
 about: true
