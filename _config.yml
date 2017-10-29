@@ -12,8 +12,8 @@ picture: assets/images/profile.jpg
 
 # If you want to include your resume, set to true
 # and specify source (external or local).
-resume: true
-resume-external: true
+resume: false
+resume-external: false
 resume-url: https://google.com/?q=my+resume
 
 url: https://griefberg.github.io
@@ -30,7 +30,7 @@ permalink: /:title/
 
 # if you don't want comments in your posts, leave categories empty
 disqus:
-  shortname: mydisqus # enter this from your disqus account
+  shortname: griefberg # enter this from your disqus account
   categories: [blog, project] # only show disqus for posts that have these categories
 
 # if you don't have any of social below, comment the line
@@ -53,18 +53,12 @@ github: Griefberg
 email: rom.solovev@gmail.com
 
 authors:
-    johndoe:
+    griefberg:
         name: Griefberg
         bio: Data Scientist. Tech-lover. Human Being
         external-image: false
         picture: assets/images/profile.jpg
         twitter: griefberg
-    jamesfoster:
-        name: James Foster
-        bio: A Man who develops software with coffee
-        external-image: false
-        picture: assets/images/james.jpg
-        twitter: jamesfoster
 
 # do you want a larger site? change the option below
 # options: [normal, large] | default: normal
