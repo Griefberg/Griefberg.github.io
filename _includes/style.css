@@ -1,0 +1,59 @@
+/*
+Error: File to import not found or unreadable: base/variables.
+        on line 2 of style.scss
+
+1: 
+2: @import "base/variables";
+3: @import "base/normalize";
+4: @import "base/syntax";
+5: @import "base/general";
+6: @import "base/helpers";
+7: 
+
+Backtrace:
+style.scss:2
+/Users/romansolovev/.rvm/gems/ruby-2.2.0/gems/sass-3.5.1/lib/sass/tree/import_node.rb:67:in `rescue in import'
+/Users/romansolovev/.rvm/gems/ruby-2.2.0/gems/sass-3.5.1/lib/sass/tree/import_node.rb:45:in `import'
+/Users/romansolovev/.rvm/gems/ruby-2.2.0/gems/sass-3.5.1/lib/sass/tree/import_node.rb:28:in `imported_file'
+/Users/romansolovev/.rvm/gems/ruby-2.2.0/gems/sass-3.5.1/lib/sass/tree/import_node.rb:37:in `css_import?'
+/Users/romansolovev/.rvm/gems/ruby-2.2.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:314:in `visit_import'
+/Users/romansolovev/.rvm/gems/ruby-2.2.0/gems/sass-3.5.1/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Users/romansolovev/.rvm/gems/ruby-2.2.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:162:in `block in visit'
+/Users/romansolovev/.rvm/gems/ruby-2.2.0/gems/sass-3.5.1/lib/sass/stack.rb:79:in `block in with_base'
+/Users/romansolovev/.rvm/gems/ruby-2.2.0/gems/sass-3.5.1/lib/sass/stack.rb:135:in `with_frame'
+/Users/romansolovev/.rvm/gems/ruby-2.2.0/gems/sass-3.5.1/lib/sass/stack.rb:79:in `with_base'
+/Users/romansolovev/.rvm/gems/ruby-2.2.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:162:in `visit'
+/Users/romansolovev/.rvm/gems/ruby-2.2.0/gems/sass-3.5.1/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+/Users/romansolovev/.rvm/gems/ruby-2.2.0/gems/sass-3.5.1/lib/sass/tree/visitors/base.rb:52:in `map'
+/Users/romansolovev/.rvm/gems/ruby-2.2.0/gems/sass-3.5.1/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+/Users/romansolovev/.rvm/gems/ruby-2.2.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:171:in `block in visit_children'
+/Users/romansolovev/.rvm/gems/ruby-2.2.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:183:in `with_environment'
+/Users/romansolovev/.rvm/gems/ruby-2.2.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:170:in `visit_children'
+/Users/romansolovev/.rvm/gems/ruby-2.2.0/gems/sass-3.5.1/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+/Users/romansolovev/.rvm/gems/ruby-2.2.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:190:in `visit_root'
+/Users/romansolovev/.rvm/gems/ruby-2.2.0/gems/sass-3.5.1/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Users/romansolovev/.rvm/gems/ruby-2.2.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:161:in `visit'
+/Users/romansolovev/.rvm/gems/ruby-2.2.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:10:in `visit'
+/Users/romansolovev/.rvm/gems/ruby-2.2.0/gems/sass-3.5.1/lib/sass/tree/root_node.rb:36:in `css_tree'
+/Users/romansolovev/.rvm/gems/ruby-2.2.0/gems/sass-3.5.1/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
+/Users/romansolovev/.rvm/gems/ruby-2.2.0/gems/sass-3.5.1/lib/sass/engine.rb:389:in `_render_with_sourcemap'
+/Users/romansolovev/.rvm/gems/ruby-2.2.0/gems/sass-3.5.1/lib/sass/engine.rb:307:in `render_with_sourcemap'
+/Users/romansolovev/.rvm/gems/ruby-2.2.0/gems/sass-3.5.1/lib/sass/plugin/compiler.rb:462:in `update_stylesheet'
+/Users/romansolovev/.rvm/gems/ruby-2.2.0/gems/sass-3.5.1/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+/Users/romansolovev/.rvm/gems/ruby-2.2.0/gems/sass-3.5.1/lib/sass/plugin/compiler.rb:209:in `each'
+/Users/romansolovev/.rvm/gems/ruby-2.2.0/gems/sass-3.5.1/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+/Users/romansolovev/.rvm/gems/ruby-2.2.0/gems/sass-3.5.1/lib/sass/plugin.rb:82:in `update_stylesheets'
+/Users/romansolovev/.rvm/gems/ruby-2.2.0/gems/sass-3.5.1/lib/sass/exec/sass_scss.rb:340:in `watch_or_update'
+/Users/romansolovev/.rvm/gems/ruby-2.2.0/gems/sass-3.5.1/lib/sass/exec/sass_scss.rb:51:in `process_result'
+/Users/romansolovev/.rvm/gems/ruby-2.2.0/gems/sass-3.5.1/lib/sass/exec/base.rb:52:in `parse'
+/Users/romansolovev/.rvm/gems/ruby-2.2.0/gems/sass-3.5.1/lib/sass/exec/base.rb:19:in `parse!'
+/Users/romansolovev/.rvm/gems/ruby-2.2.0/gems/sass-3.5.1/bin/scss:13:in `<top (required)>'
+/Users/romansolovev/.rvm/gems/ruby-2.2.0/bin/scss:23:in `load'
+/Users/romansolovev/.rvm/gems/ruby-2.2.0/bin/scss:23:in `<main>'
+/Users/romansolovev/.rvm/gems/ruby-2.2.0/bin/ruby_executable_hooks:15:in `eval'
+/Users/romansolovev/.rvm/gems/ruby-2.2.0/bin/ruby_executable_hooks:15:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: File to import not found or unreadable: base/variables.\A         on line 2 of style.scss\A \A 1: \A 2: @import \"base/variables\";\A 3: @import \"base/normalize\";\A 4: @import \"base/syntax\";\A 5: @import \"base/general\";\A 6: @import \"base/helpers\";\A 7: "; }
