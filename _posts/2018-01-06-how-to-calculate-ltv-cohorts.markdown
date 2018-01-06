@@ -16,7 +16,7 @@ description: Different methods of calculating LTV
 # jemoji: '<img class="emoji" title=":ramen:" alt=":ramen:" src="https://assets.github.com/images/icons/emoji/unicode/1f35c.png" height="20" width="20" align="absmiddle">'
 ---
 
-I hope you all read my previous [post](https://griefberg.io/how-to-calculate-ltv) where I tried to understand a general LTV concept. Now let's begin our investigation how to calculate LTV if we have enough historical data (at least, 1 year). The example will stay the same: imagine that we have a food delivery business. Our customers could order food via our mobile app. We have a partnership with a lot of restaurants and get a commission from every order. Our current goal is to calculate Customer Lifetime Value. Let's remind us a general LTV formula from the previous post:  
+I hope you all read my previous [post](http://griefberg.me/how-to-calculate-ltv/) where I tried to understand a general LTV concept. Now let's begin our investigation how to calculate LTV if we have enough historical data (at least, 1 year). The example will stay the same: imagine that we have a food delivery business. Our customers could order food via our mobile app. We have a partnership with a lot of restaurants and get a commission from every order. Our current goal is to calculate Customer Lifetime Value. Let's remind us a general LTV formula from the previous post:  
 
 $$
     \text{ Customer LTV = } \text{R}_0 * \text{AGMPU}_0  + \text{R}_1 * \frac{\text{AGMPU}_1}{\text{ (1 + d)}^1} + \text{ ...} + 
@@ -28,7 +28,7 @@ $$
 $$
 
 The algorithm for calculating LTV via a cohort approach is the following:
-1. Calculate historical retention rates and AGMPU for cohorts (of course, if you have historical data, otherwise, use this [approach](https://griefberg.io/how-to-calculate-ltv)).
+1. Calculate historical retention rates and AGMPU for cohorts (of course, if you have historical data, otherwise, use this [approach](http://griefberg.me/how-to-calculate-ltv/)).
 2. Calculate average historical retention rates and AGMPU weighted on cohorts' sizes. 
 3. Fit statistical models for retention rates and AGMPU versus a cohorts lifespan. 
 4. Predict retention rates and AGMPU for the future using created models  (ideally, you will find such an exponential function for retention rate that it will go to zero after some lifetime).
@@ -62,7 +62,7 @@ At this point I got historical data about all cohorts:
 - **Orders** – average number of orders per cohort member in i-th period.
 - **Cohort size** – initial cohort size.
 - **Retention** - proportion of cohorts members who made an order in the i-th period.
-- **AGMPU** - average gross margin per user in the i-th period (if you want to find a more detailed definition of this, please look my previous [post](https://griefberg.io/how-to-calculate-ltv)).
+- **AGMPU** - average gross margin per user in the i-th period (if you want to find a more detailed definition of this, please look my previous [post](http://griefberg.me/how-to-calculate-ltv/)).
 
 ### Average historical retention rates and AGMPU 
 At this stage we need to average (weighted by a cohort size to pay more attention to big cohorts) everything we got on the previous one by the period:
