@@ -21,9 +21,7 @@ There are plenty of articles about LTV calculations: it seems that every marketi
 The easiest way to understand this concept in theory is to look at customer cohorts. Cohorts term came to marketing from demography and generally means people who made some action during some time period (for example, people who married in 2015). When you compare cohorts, you could get some insights about the changes in people's behaviour. Now imagine that you have a food delivery business. In this case we could define a cohort like all customers who made their first order during, for example, a month. So, there are cohorts of June 2017, July 2017, etc.  Now if you want to get cohorts lifetime value you need to sum all expected returns from them:
 
 \begin{equation}
-    \text{ 
-        Cohort LTV = Cohort Gross Margin in Month 0 + ... + Cohort Gross Margin in Month N + ...
-        } 
+    \text{Cohort LTV} = \text{Cohort Gross Margin in Month 0} + ... + \text{Cohort Gross Margin in Month N + ...}
 \end{equation}
 
 Sure, you could sum just revenue flows, but it's more appropriate to use Gross Margin:  

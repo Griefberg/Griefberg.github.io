@@ -99,12 +99,7 @@ ret.plot.five.years <- ggplot(data=pred.cohorts, aes(period, pred.retention)) +
     geom_line(col='black', linetype = 'dashed') +
     scale_x_continuous(name="Cohorts Period (months)") + scale_y_continuous(name="Retention") +
     ggtitle('Average Retention vs. Cohort Periods (60 Months Prediction)')
-agmpu.plot.five.years <- ggplot(data=pred.cohorts, aes(period, pred.agmpu)) +
-    geom_line(col='black', linetype = 'dashed') +
-    scale_x_continuous(name="Cohorts Period (months)") + scale_y_continuous(name="AGMPU", limits=c(0, 17)) +
-    ggtitle('Average AGMPU vs. Cohort Periods (60 Months Prediction)')
-grid.arrange(ret.plot.five.years, agmpu.plot.five.years)
-g <- arrangeGrob(ret.plot.five.years, ret.plot.five.years)
+g <- ret.plot.five.years
 ggsave(file="five_years_values.png", g)
 
 # step 5 calculate LTV
