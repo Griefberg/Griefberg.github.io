@@ -22,7 +22,7 @@ url: https://griefberg.github.io
 permalink: /:title/
 
 # To enable google analytics, supply your token below
-# analytics-google: 'UA-MYANALYTICS'
+analytics-google: 'UA-109226469-1'
 
 # To enable piwik tracking, supply your url & site ID below
 # analytics-piwik-url: 'piwik.my-host.com'
@@ -63,7 +63,7 @@ authors:
 # do you want a larger site? change the option below
 # options: [normal, large] | default: normal
 # normal = 560px / large = 810px
-width: normal
+width: large   # doesn't work; hardcode "large" in a body in default.html
 
 # if you don't need pagination, comment the *paginate* configs below
 # paginate: 5
@@ -94,11 +94,27 @@ show-author: true
 # do you want some animations?
 animation: true
 
+# select markdown
+markdown: kramdown
+
+kramdown:
+  auto_ids: true
+  input: GFM
+  toc_levels: 1..6
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
+  enable_coderay: false
+
+datatable: true
+
 gems:
   - jekyll-seo-tag
   - jekyll-gist
   - jekyll-feed
   - jemoji
+
+sass:
+  sass_dir: _sass
+  style: compressed # Possible values -> nested / expanded / compact / compressed
 
 #jekyll-mentions:
 #    base_url: https://github.com
