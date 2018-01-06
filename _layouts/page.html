@@ -16,18 +16,20 @@ layout: default
         displayMath: [ ['$$$', '$$$']],
         processEscapes: true,
         skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-      },
+        },
       messageStyle: "none",
       "HTML-CSS" : {
         availableFonts : ["TeX"],
         preferredFont : "TeX",
         webFont : "TeX",
         imageFont : null,
-        scale: 76
-    },
+        scale: 76,
+        linebreaks: { automatic: true }
+        },
       TeX: {
         extensions: ["AMSmath.js", "AMSsymbols.js"]
-}
+        },
+      SVG: { linebreaks: { automatic: true } }
     });
 </script>
 <script type="text/javascript" async
