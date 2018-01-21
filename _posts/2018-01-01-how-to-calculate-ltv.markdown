@@ -2,7 +2,7 @@
 title: "Understanding Customer Lifetime Value (LTV)"
 layout: post
 date: 2018-01-21 20:00
-image: /assets/images/markdown.jpg
+image: /assets/images/how-to-calculate-ltv/main.jpeg
 headerImage: false
 tag:
 - marketing analytics
@@ -11,7 +11,7 @@ category: blog
 author: Griefberg
 externalLink: false
 hidden: false
-description: Understanding Customer Lifetime Value (LTV)
+description: Understanding Customer Lifetime Value
 # jemoji: '<img class="emoji" title=":ramen:" alt=":ramen:" src="https://assets.github.com/images/icons/emoji/unicode/1f35c.png" height="20" width="20" align="absmiddle">'
 ---
 
