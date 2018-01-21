@@ -1,7 +1,7 @@
 ---
 title: "Understanding Customer Lifetime Value (LTV)"
 layout: post
-date: 2017-10-29 17:45
+date: 2018-01-21 20:00
 image: /assets/images/markdown.jpg
 headerImage: false
 tag:
@@ -10,29 +10,29 @@ tag:
 category: blog
 author: Griefberg
 externalLink: false
-hidden: true
-description: Different methods of calculating LTV
+hidden: false
+description: Understanding Customer Lifetime Value (LTV)
 # jemoji: '<img class="emoji" title=":ramen:" alt=":ramen:" src="https://assets.github.com/images/icons/emoji/unicode/1f35c.png" height="20" width="20" align="absmiddle">'
 ---
 
-There are plenty of articles about LTV calculations: it seems that every marketing company has written about it in their PR blogs. Despite this fact, it wasn't easy for me to find something that combines both theory and practice. That's why after reading 10+ articles about LTV I decided to try to aggregate all acquired knowledge in this paper.
+There are plenty of articles about LTV to get a general overview of this term. However, if you want to go deeper, it could be quite difficult to understand what's behind these fancy formulas. That's why after reading 10+ articles about LTV I decided to try to aggregate all acquired knowledge in this paper.
 
 # What is LTV?
-The easiest way to understand this concept in theory is to look at customer cohorts. Cohorts term came to marketing from demography and generally means people who made some action during some time period (for example, people who married in 2015). When you compare cohorts, you could get some insights about the changes in people's behaviour. Now imagine that you have a food delivery business. In this case we could define a cohort like all customers who made their first order during, for example, a month. So, there are cohorts of June 2017, July 2017, etc.  Now if you want to get cohorts lifetime value you need to sum all expected returns from them:
+**LTV** is a sum of all returns a company expects to get from a customer during their current and future relationships. The easiest way to understand this concept in theory is to look at customers' cohorts. This term originates from a demographic study and generally means people who made some action during some time period (for example, people who married in 2015). We also could define a cohort like all customers who made their first orders within a month. So, there are cohorts of December 2017, January 2018, etc.  Now if you want to get a cohorts lifetime value you need to sum all expected returns from them:
 
 \begin{equation}
     \text{Cohort LTV} = \text{Cohort Gross Margin in Month 0} + ... + \text{Cohort Gross Margin in Month N + ...}
 \end{equation}
 
-Sure, you could sum just revenue flows, but it's more appropriate to use Gross Margin:  
+Sure, you could sum revenue flows, but it's more appropriate to use Gross Margin:  
 
 \begin{equation}
     \text{ Gross Margin = Revenue } * \text { Gross Margin % = Revenue } * \frac{\text{Revenue - COGS}}{\text{Revenue}}
 \end{equation}
 
-You could see the formula for Gross Margin above, but what's COGS? This is a cost of goods sold. If you don't know how to calculate it in case of your company, just ask guys from your financial department. Regarding the example of food delivery service, your Gross Margin could be just the sum of the commission your company gets from every order.
+You could see the formula for Gross Margin above, but what's COGS? This is a [cost of goods sold](https://en.wikipedia.org/wiki/Cost_of_goods_sold). For example, your Gross Margin could be just the sum of the commission your company gets from every order.
 
-If you look at Cohorts LTV formula above, the whole point is that we couldn't get accurate LTV but only try to predict it varying our aggregation assumptions. We could simplify it (and loose some accuracy, of course) in the following way:
+If you look at Cohorts LTV formula above, the whole point is that we couldn't get accurate LTV but only try to predict it varying our aggregation assumptions. We could simplify it (and lose some accuracy) in the following way:
 
 \begin{equation}
     \text{ Cohort LTV = Cohort Size } * \text{R}_0 * \text{AGMPU}_0 +  \text{Cohort Size} * \text{R}_1 * \text{AGMPU}_1  +  \text{ ...} \\\
@@ -42,31 +42,31 @@ If you look at Cohorts LTV formula above, the whole point is that we couldn't ge
     \text{ AGMPU}_n \text{ – average gross margin per user in month n (e.g. 5 bucks in the 0th month, 11 bucks in 1st month, etc.) }
 \end{equation}
 
-Sometimes people discount it by rate to get the present value of future money (yes, 100 dollars next year ≠ 100 dollars today):
+Sometimes people discount it by rate to get the present value of future revenue (yes, 100 dollars next year ≠ 100 dollars today):
 
 \begin{equation}
     \text{ Cohort LTV = Cohort Size } * \text{R}_0 * \text{AGMPU}_0  +  \text{Cohort Size} * \text{R}_1 * \frac{\text{AGMPU}_1}{\text{ (1 + d)}}  +  \text{ ...}  \\\
     \text{where} \\\
     \text{d - discount rate, i.e. the interest rate you can get if you put your money in the bank } \\\ 
-    \text{ (by the way, of course, we don't discount cash flow of 0th month) } 
+    \text{ (by the way we don't discount cash flow of 0th month) } 
 \end{equation}
 
-The final step is just to get rid of this cohort terminology and talk about one customer. Just remove Cohort Size from the formula and we get the formula of Customer Lifetime Value:
+The final step is just to get rid of this cohort terminology and talk about one customer. Just remove Cohort Size from the formula and we get Customer Lifetime Value:
 
 \begin{equation}
     \text{ Customer LTV = } \text{R}_0 * \text{AGMPU}_0  + \text{R}_1 * \frac{\text{AGMPU}_1}{\text{ (1 + d)}^1} + \text{ ...} + 
         \text{R}_n * \frac{\text{AGMPU}_n}{\text{ (1 + d)}^n}  + \text{ ... } \qquad  \text{ (1) }
 \end{equation}
 
-Understanding $$R_0, R_1$$ is not pretty straightforward without cohorts' context, but just think about it as some kind of probability that a user will bring money in nth period of their customer life cycle.
+Understanding $$R_0, R_1$$ could be not clear without cohorts' context, but just think about them as some kind of probability that a user will bring revenue in the n-th period of their customer life cycle.
 
 So, cool! We got it! Let's move to a more practical side. Technically I see two ways of calculating LTV in practice depending of the accuracy we want to achieve and the data we have:  
-1. **Simple and less accurate way (more aggregations)**: assume that R and AGMPU are **constant** over customer lifetime
-2. **More complicated and a bit more accurate way (less aggregations)**: assume that R and AGMPU are **not constant** over customer lifetime
+1. **A simple but less accurate approach (more aggregations)**: assume that R and AGMPU are **constant** over customer's lifetime
+2. **A less simple but more accurate approach (less aggregations)**: assume that R and AGMPU are **not constant** over customer's lifetime
 
-## Simple and less accurate way (more aggregations)
+## A simple but less accurate approach
 Okay, let's make the following assumptions:
-- **AGMPU** is a constant: every month a customer brings us the same amount of money (we can calculate it on historical data or just assume some amount)
+- **AGMPU** is a constant: every month a customer brings us the same amount of revenue (we can calculate it on historical data or just assume some amount)
 - **R** is a constant: each month R % of the last month customers continue using a service or simply saying each month the constant percent (1 - R) of customers churn (we can calculate it on historical data or assume)  
 
 Assuming this, we get the following:
@@ -95,18 +95,18 @@ If we didn't discount, we would get the following very common formula:
     \text{ Customer LTV = } \frac{AGMPU}{1-R} = \frac{AGMPU}{\text{churn rate}}
 \end{equation}
 
-Manipulations above could be also explained using [exponential decay constant](https://en.wikipedia.org/wiki/Exponential_decay), but, as for me, geometric series is the clearest way. However, if you start reading some articles about LTV, you could find that some authors just mention it without any explanation.
+Manipulations above could be also explained using an [exponential decay constant](https://en.wikipedia.org/wiki/Exponential_decay), but, for me, geometric series is the clearest way. However, if you start reading some articles about LTV, you could find that some authors just mention it without any explanation.
 
 Other useful recommendations regarding this approach (3):
 - [Some people](http://tomtunguz.com/churn-fallacies/) also multiply the calculated LTV by a factor (ex. 0.75), because a churn rate could be higher in reality.
 - If you try to calculate LTV for SaaS, then look [here](http://www.forentrepreneurs.com/ltv/). The logic is the same, you just need to make more assumptions.
 - Use the above approach (3) if you have a lack of time or data. 
 
-## More complicated and a bit more accurate way (less aggregations)
-The point of more complicated approach is just to take the formula (1) as it is. Don't assume that a retention rate and AGMPU are constants. The algorithm will be the followoing:
-1. Calculate historical retention rates and AGMPU for cohorts (of course, if you have historical data, otherwise, use the first approach above).
+## A less simple but more accurate approach
+The point of more complicated approach is just to take the formula (1) as it is. Don't assume that a retention rate and AGMPU are constants. The algorithm will be the following:
+1. Calculate historical retention rates and AGMPU for cohorts (if you have historical data, otherwise, use the first approach above).
 2. Calculate average historical retention rates and AGMPU weighted on cohorts' sizes. 
-3. Fit statistical models for retention rates and AGMPU versus cohorts lifespan. 
+3. Fit statistical models for retention rates and AGMPU versus cohorts' lifespan. 
 4. Predict retention rates and AGMPU for the future using created models  (ideally, you will find such an exponential function for a retention rate that it will go to zero after some lifetime).
 5. Calculate LTV using the formula (1)
 

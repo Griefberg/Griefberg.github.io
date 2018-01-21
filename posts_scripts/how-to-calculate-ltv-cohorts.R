@@ -100,7 +100,7 @@ ret.plot.five.years <- ggplot(data=pred.cohorts, aes(period, pred.retention)) +
     scale_x_continuous(name="Cohorts Period (months)") + scale_y_continuous(name="Retention") +
     ggtitle('Average Retention vs. Cohort Periods (60 Months Prediction)')
 g <- ret.plot.five.years
-ggsave(file="five_years_values.png", g)
+ggsave(file="five_years_values.png", g, width = 6.9, height = 3.31)
 
 # step 5 calculate LTV
 .LTV <- with(pred.cohorts, sum(pred.retention * pred.agmpu / one_d_n)) 

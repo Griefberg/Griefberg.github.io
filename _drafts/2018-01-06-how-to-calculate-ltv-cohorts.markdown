@@ -1,7 +1,7 @@
 ---
 title: "Cohort Approach For Customer Lifetime Value (LTV) Calculation"
 layout: post
-date: 2017-11-25 12:00
+date: 2018-01-28 18:00
 image: /assets/images/markdown.jpg
 headerImage: false
 tag:
@@ -11,6 +11,7 @@ category: blog
 author: Griefberg
 externalLink: false
 datatable: true
+draft: true
 hidden: true
 description: Different methods of calculating LTV
 # jemoji: '<img class="emoji" title=":ramen:" alt=":ramen:" src="https://assets.github.com/images/icons/emoji/unicode/1f35c.png" height="20" width="20" align="absmiddle">'
@@ -114,7 +115,7 @@ After we've fitted our retention and AGMPU, let's choose the period we're going 
 
 In the case of my dataset, I can see that the cohort disappears after 5 years:
 
-![5Y Predicted values]({{ "/assets/images/how-to-calculate-ltv-cohorts/five_years_values.png" | absolute_url }})
+![5Y Predicted values]({{ "/assets/images/how-to-calculate-ltv-cohorts/five_years_values.png" | absolute_url }})              
 
 ## LTV calculation
 Finally we're ready to calculate LTV. We just sum predicted AGMPU multiplied by retention rate and divided by discount rate for every cohort life period (in my case 5 years). As a result I got that an average user from my dataset brings **$40,06** of lifetime profit to the company. 
