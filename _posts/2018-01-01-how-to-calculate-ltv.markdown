@@ -11,7 +11,7 @@ category: blog
 author: Griefberg
 externalLink: false
 hidden: true
-description: Going to deeper understanding what's behind the LTV formula
+description: Going to a deeper understanding what's behind the LTV formula
 # jemoji: '<img class="emoji" title=":ramen:" alt=":ramen:" src="https://assets.github.com/images/icons/emoji/unicode/1f35c.png" height="20" width="20" align="absmiddle">'
 ---
 
