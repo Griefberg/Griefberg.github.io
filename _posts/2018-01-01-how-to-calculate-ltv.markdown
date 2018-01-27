@@ -1,7 +1,7 @@
 ---
 title: "Understanding Customer Lifetime Value (LTV)"
 layout: post
-date: 2018-01-21 20:00
+date: 2018-01-27 16:00
 image: /assets/images/first_article_main.jpeg
 headerImage: false
 tag:
@@ -10,7 +10,7 @@ tag:
 category: blog
 author: Griefberg
 externalLink: false
-hidden: true
+hidden: false
 description: Going to a deeper understanding what's behind the LTV formula
 # jemoji: '<img class="emoji" title=":ramen:" alt=":ramen:" src="https://assets.github.com/images/icons/emoji/unicode/1f35c.png" height="20" width="20" align="absmiddle">'
 ---
@@ -85,7 +85,7 @@ It means:
 Now look at the final formula (2) again. Wait, wait, wait. Something very familiar... Damn, this is [geometric series](https://en.wikipedia.org/wiki/Geometric_series)! Common ratio is $$ \frac{\text{R}}{\text{ (1 + d)}} $$, while AGMPU is the first term of the series. It means that we can use the following formula to calculate the total sum of (3):
 
 \begin{equation}
-    \text{ Customer LTV = } \frac{\text{AGMPU}}{1 -\frac{\text{R}}{\text{(1 + d)}}} \text{ = }  \frac{\text{AGMPU} * \text{(1+d)}}{\text{(1 + d} - \text{R})}  \qquad  \text{ (3) }
+    \text{ Customer LTV = } \frac{\text{AGMPU}}{1 -\frac{\text{R}}{\text{1 + d}}} \text{ = }  \frac{\text{AGMPU} * \text{(1+d)}}{\text{1 + d} - \text{R}}  \qquad  \text{ (3) }
 \end{equation}
 
 
@@ -96,6 +96,17 @@ If we didn't discount, we would get the following very common formula:
 \end{equation}
 
 Manipulations above could be also explained using an [exponential decay constant](https://en.wikipedia.org/wiki/Exponential_decay), but, for me, geometric series is the clearest way. However, if you start reading some articles about LTV, you could find that some authors just mention it without any explanation.
+
+Let's look at some example. Imagine that:        
+- the discount rate equals 2 % (US dicount rate currently)  
+- every month your company loses 5 % of your old customers, then a retention rate equals 95 %   
+- your average monthly gross margin per user equals $50 
+
+Then your customer LTV will be the following:
+
+\begin{equation}
+    \text{ Customer LTV = } \frac{\$50 * (1+0.02)}{(1 + 0.02) - 0.95} = \$728.57
+\end{equation}
 
 Other useful recommendations regarding this approach (3):
 - [Some people](http://tomtunguz.com/churn-fallacies/) also multiply the calculated LTV by a factor (ex. 0.75), because a churn rate could be higher in reality.
