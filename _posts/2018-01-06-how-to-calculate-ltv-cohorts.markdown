@@ -2,7 +2,7 @@
 title: "Cohort Approach For Customer Lifetime Value (LTV) Calculation"
 layout: post
 date: 2018-02-10 12:00
-image: /assets/images/markdown.jpg
+image: /assets/images/cohorts_ltv_article_main.jpg
 headerImage: false
 tag:
 - marketing analytics
