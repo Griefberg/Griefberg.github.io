@@ -121,4 +121,4 @@ The point of more complicated approach is just to take the formula (1) as it is.
 4. Predict retention rates and AGMPU for the future using created models  (ideally, you will find such an exponential function for a retention rate that it will go to zero after some lifetime).
 5. Calculate LTV using the formula (1)
 
-Yes, it sounds a bit complicated, but really it's not. I will try to explain this approach more precisely in my next post. Tschüss!
+Yes, it sounds a bit complicated, but really it's not. I will try to explain this approach more precisely in my [next post](https://griefberg.me/how-to-calculate-ltv-cohorts/). Tschüss!
