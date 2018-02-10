@@ -19,6 +19,8 @@ layout: compress
     <link rel="canonical" href="{{ site.url }}{{ page.url | replace:'index.html','' }}">
     <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ site.url }}{{ '/feed.xml' }}" />
 
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" >
+
     {% if page.image %}
     <meta property="og:image" content="{{ site.url }}/{{ page.image }}" />
     {% endif %}
@@ -29,6 +31,7 @@ layout: compress
     {% capture scss_sheet %}{% include style.scss %}{% endcapture %}
     {{ scss_sheet | scssify }}
     </style>
+
 
 </head>
 <body>

@@ -1,7 +1,7 @@
 ---
 title: "Cohort Approach For Customer Lifetime Value (LTV) Calculation"
 layout: post
-date: 2018-01-28 18:00
+date: 2018-02-10 12:00
 image: /assets/images/markdown.jpg
 headerImage: false
 tag:
@@ -11,13 +11,13 @@ category: blog
 author: Griefberg
 externalLink: false
 datatable: true
-draft: true
-hidden: true
+draft: false
+hidden: false
 description: Different methods of calculating LTV
 # jemoji: '<img class="emoji" title=":ramen:" alt=":ramen:" src="https://assets.github.com/images/icons/emoji/unicode/1f35c.png" height="20" width="20" align="absmiddle">'
 ---
 
-I hope you all read my previous [post](http://griefberg.me/how-to-calculate-ltv/) where I tried to understand a general LTV concept. Now let's begin our investigation how to calculate LTV if we have enough historical data (at least, 1 year). The example will stay the same: imagine that we have a food delivery business. Our customers could order food via our mobile app. We have a partnership with a lot of restaurants and get a commission from every order. Our current goal is to calculate Customer Lifetime Value. Let's remind us a general LTV formula from the previous post:  
+I hope you all read my previous [post](http://griefberg.me/how-to-calculate-ltv/) where I tried to understand a general LTV concept. Now let's begin our investigation how to calculate LTV if we have enough historical data (at least, 1 year). Let's remind us a general LTV formula from the previous post:  
 
 $$
     \text{ Customer LTV = } \text{R}_0 * \text{AGMPU}_0  + \text{R}_1 * \frac{\text{AGMPU}_1}{\text{ (1 + d)}^1} + \text{ ...} + 
@@ -32,7 +32,7 @@ The algorithm for calculating LTV via a cohort approach is the following:
 1. Calculate historical retention rates and AGMPU for cohorts (of course, if you have historical data, otherwise, use this [approach](http://griefberg.me/how-to-calculate-ltv/)).
 2. Calculate average historical retention rates and AGMPU weighted on cohorts' sizes. 
 3. Fit statistical models for retention rates and AGMPU versus a cohorts lifespan. 
-4. Predict retention rates and AGMPU for the future using created models  (ideally, you will find such an exponential function for retention rate that it will go to zero after some lifetime).
+4. Predict retention rates and AGMPU for the future using created models  (ideally, you will find such an exponential function for a retention rate that it will go to zero after some lifetime).
 5. Calculate LTV using formula (1)
 
 
@@ -48,7 +48,7 @@ I use the dataframe **cdnowElog** from BTYD package for my calculations (you cou
 |...  |...        |...   |...        |...    |
 
 
-**Cust**, **date** and **price** were in the initial dataset. What I did is calculate the **birth** field (starting month for every cohort a customer belongs to) and the **period** (how many months passed from the first order of a customer). Then I did some GroupBy work and got all historical values I needed (remind: you could find the whole code [here](https://github.com/Griefberg/Griefberg.github.io/tree/master/posts_scripts/how-to-calculate-ltv-cohorts.R)). The first 3 rows look like that:
+**Cust**, **date** and **price** were in the initial dataset. What I did is calculate the **birth** field (a starting month for every cohort a customer belongs to) and the **period** (how many months passed from the first order of a customer). Then I did some GroupBy work and got all the historical values I needed (remind: you could find the whole code [here](https://github.com/Griefberg/Griefberg.github.io/tree/master/posts_scripts/how-to-calculate-ltv-cohorts.R)). The first 3 rows look like that:
 
 |birth      |period |retained_users |revenue  |orders |cohort_size |retention |agmpu |
 |:----------|:------|:--------------|:--------|:------|:-----------|:---------|:-----|
@@ -57,7 +57,7 @@ I use the dataframe **cdnowElog** from BTYD package for my calculations (you cou
 |1997-01-01 |2      |95             |4241.64  |1.38   |781         |0.12      |13.39 |
 |...        |...    |...            |...      |...    |...         |...       |...   |
 
-At this point I got historical data about all cohorts:
+At this point I got the historical data about all cohorts:
 - **Retained users** – how many members from the initial cohort made an order in the i-th period. 
 - **Revenue** – sum of the revenue by all cohorts members.
 - **Orders** – average number of orders per cohort member in i-th period.
@@ -66,7 +66,7 @@ At this point I got historical data about all cohorts:
 - **AGMPU** - average gross margin per user in the i-th period (if you want to find a more detailed definition of this, please look my previous [post](http://griefberg.me/how-to-calculate-ltv/)).
 
 ### Average historical retention rates and AGMPU 
-At this stage we need to average (weighted by a cohort size to pay more attention to big cohorts) everything we got on the previous one by the period:
+At this stage we need to calculate an average (weighted by a cohort size to pay more attention to big cohorts) of everything we got on the previous one by the period:
 
 |period |avg.retention |avg.agmpu |avg.orders |
 |:------|:-------------|:---------|:----------|
@@ -118,7 +118,7 @@ In the case of my dataset, I can see that the cohort disappears after 5 years:
 ![5Y Predicted values]({{ "/assets/images/how-to-calculate-ltv-cohorts/five_years_values.png" | absolute_url }})              
 
 ## LTV calculation
-Finally we're ready to calculate LTV. We just sum predicted AGMPU multiplied by retention rate and divided by discount rate for every cohort life period (in my case 5 years). As a result I got that an average user from my dataset brings **$40,06** of lifetime profit to the company. 
+Finally we're ready to calculate LTV. We just sum predicted AGMPU multiplied by retention rate and divided by discount rate for every cohort's life period (in my case 5 years). As a result I got that an average user from my dataset brings **$40,06** of lifetime profit to the company. 
 
 How you can use this result?   
 
