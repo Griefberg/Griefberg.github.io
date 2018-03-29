@@ -2,7 +2,8 @@
 title: "Statistical comparison of two means"
 layout: post
 date: 2018-03-29 11:00
-header-img: /assets/images/compare_means_main.jpg
+image: /assets/images/compare_means_main.jpg
+headerImage: false
 tag:
 - inferential statistics
 category: blog
