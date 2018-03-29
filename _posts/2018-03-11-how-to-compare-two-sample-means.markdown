@@ -1,7 +1,7 @@
 ---
 title: "Statistical comparison of two means"
 layout: post
-date: 2018-03-11 12:00
+date: 2018-03-29 11:00
 image: /assets/images/compare_means.jpg
 headerImage: false
 tag:
