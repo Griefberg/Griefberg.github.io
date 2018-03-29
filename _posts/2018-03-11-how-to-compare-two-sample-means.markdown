@@ -2,8 +2,7 @@
 title: "Statistical comparison of two means"
 layout: post
 date: 2018-03-29 11:00
-image: /assets/images/compare_means_main.jpg
-headerImage: false
+header-img: /assets/images/compare_means_main.jpg
 tag:
 - inferential statistics
 category: blog
@@ -69,7 +68,8 @@ If we [standardize](https://en.wikipedia.org/wiki/Standard_score)  $$ \bar X_n $
 
 This will allow us to use the properties of Standard Normal distribution:
 
-![Confidence Interval]({{ "/assets/images/how-to-compare-means/confidence_interval.png" | absolute_url }})         
+![Confidence Interval]({{ "/assets/images/how-to-compare-means/confidence_interval.png" | absolute_url }})     
+    
 On the picture above we could see Z-score (or technically standard normal distribution). We know everything about this distribution and especially that 95 % of distribution's values vary between -1.96 and 1.96. Stop. Does it mean that 95 % of values of our random variable $$ \frac{\bar X_n - μ}{\sigma / \sqrt{n}} $$ also lie in the range [-1.96, 1.96]? Yes, exactly! Let's write this in a more statistical way:
 
 \begin{equation}    
